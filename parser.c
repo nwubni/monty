@@ -26,5 +26,6 @@ void tokenize(char **tokens, char *str)
 	}
 
 	tokens[index] = NULL;
+	pdata.num_tokens = index;
 }
 

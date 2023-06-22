@@ -1,7 +1,7 @@
 #include "monty.h"
 
 FILE *open_file(const char *filename);
-bus_t pdata = {0, NULL};
+bus_t pdata = {0, 0, 0, NULL};
 
 /**
 * main - main function
@@ -32,6 +32,7 @@ int main(int argc, char **argv)
 
 	while (read != -1 && !pdata.exec_error)
 	{
+		pdata.line_number = line_number;
 		tokenize(tokens, line);
 		execute(tokens, &stack, line_number);
 		line_number++;

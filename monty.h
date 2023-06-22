@@ -62,7 +62,9 @@ typedef struct validate_s
 */
 typedef struct bus_s
 {
+	int line_number;
 	int exec_error;
+	int num_tokens;
 	char *stack_value;
 } bus_t;
 
@@ -81,6 +83,18 @@ int swap(stack_t **stack);
 void f_add(stack_t **stack, unsigned int line_number);
 int add(stack_t **stack);
 
+void f_sub(stack_t **stack, unsigned int line_number);
+int sub(stack_t **stack);
+
+void f_div(stack_t **stack, unsigned int line_number);
+int _div(stack_t **stack);
+
+void f_mul(stack_t **stack, unsigned int line_number);
+int mul(stack_t **stack);
+
+void f_mod(stack_t **stack, unsigned int line_number);
+int mod(stack_t **stack);
+
 void free_stack(stack_t *stack);
 
 int can_push(stack_t *stack);
@@ -88,6 +102,10 @@ int can_pint(stack_t *stack);
 int can_pop(stack_t *stack);
 int can_swap(stack_t *stack);
 int can_add(stack_t *stack);
+int can_sub(stack_t *stack);
+int can_div(stack_t *stack);
+int can_mul(stack_t *stack);
+int can_mod(stack_t *stack);
 
 void tokenize(char **tokens, char *str);
 int execute(char **cmd, stack_t **stack, int line_number);

@@ -29,8 +29,3 @@ int is_numeric(const char *str)
 	return (digit_count > 0);
 }
 
-
-
-
-
-

@@ -12,7 +12,8 @@ int can_execute(stack_t **stack, int index, int line_number)
 {
 	validate validator[] = {
 		{can_push}, {NULL}, {can_pint}, {can_pop},
-		{can_swap}, {can_add}
+		{can_swap}, {can_add}, {can_sub}, {can_div},
+		{can_mul}, {can_mod}
 	};
 
 	if (validator[index].f && !validator[index].f(*stack))
@@ -38,12 +39,13 @@ int execute(char **cmd, stack_t **stack, int line_number)
 	instruction_t instructions[] = {
 		{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
 		{"pop", f_pop}, {"swap", f_swap}, {"add", f_add},
-		{"nop", NULL}, {NULL, NULL}
+		{"sub", f_sub}, {"div", f_div}, {"mul", f_mul},
+		{"mod", f_mod}, {"nop", NULL}, {"#", NULL}, {NULL, NULL}
 	};
 
 	int j;
 
-	pdata.stack_value = cmd && cmd[1] ? cmd[1] : NULL;
+	pdata.stack_value = cmd && pdata.num_tokens == 2 ? cmd[1] : NULL;
 
 	if (!cmd || !cmd[0])
 		return (0);

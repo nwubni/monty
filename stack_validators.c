@@ -52,16 +52,3 @@ int can_swap(stack_t *stack)
 	return (1);
 }
 
-/**
-* can_add - Checks if it's okay to add two top most stack items
-* @stack: Stack head
-* Return: int
-*/
-int can_add(stack_t *stack)
-{
-	if (!stack || !stack->next)
-		return (0);
-
-	return (1);
-}
-

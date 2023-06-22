@@ -61,16 +61,3 @@ void f_swap(stack_t **head, unsigned int line_number)
 	swap(head);
 }
 
-/**
-* f_add - Adds first two nodes in doubly list
-* @head: Head of doubly linked list
-* @line_number: Line number
-* Return: void
-*/
-void f_add(stack_t **head, unsigned int line_number)
-{
-	(void) line_number;
-
-	add(head);
-}
-
