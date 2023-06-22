@@ -23,6 +23,7 @@ void f_push(stack_t **head, unsigned int line_number)
 	{
 		pdata.exec_error = 1;
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		return;
 	}
 
 	n = atoi(pdata.stack_value);
