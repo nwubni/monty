@@ -35,9 +35,9 @@ int main(int argc, char **argv)
 		pdata.line_number = line_number;
 		tokenize(tokens, line);
 		execute(tokens, &stack, line_number);
-		line_number++;
 
 		read = getline(&line, &len, file);
+		line_number++;
 	}
 
 	fclose(file);

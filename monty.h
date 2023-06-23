@@ -108,7 +108,7 @@ int can_mul(stack_t *stack);
 int can_mod(stack_t *stack);
 
 void tokenize(char **tokens, char *str);
-int execute(char **cmd, stack_t **stack, int line_number);
+void execute(char **cmd, stack_t **stack, int line_number);
 
 void show_exec_error(unsigned int line, int index);
 
